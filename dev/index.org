@@ -26,10 +26,10 @@ that can be realised by creating a Julia-specific system, namely:
   solution
 + Allowing datasets to be easily shared with a Julia package
 
-In addition, the Julia community seems to have a strong tendency to NIH[fn:nih] tools, so
+In addition, the Julia community seems to have a strong tendency to NIH[fn:NIH] tools, so
 we may as well get ahead of this and try to make something good 😛.
 
-[fn:nih] Not Invented Here, a tendency to "reinvent the wheel" to avoid using
+[fn:NIH] Not Invented Here, a tendency to "reinvent the wheel" to avoid using
 tools from external origins --- it would of course be better if you (re)made it.
 
 ** Pre-existing solutions
@@ -56,8 +56,6 @@ tools from external origins --- it would of course be better if you (re)made it.
 + Workflow manager, with remote file support
 + [[https://www.nextflow.io/docs/edge/script.html?highlight=file#files-and-i-o][Docs on files and IO]]
 + [[https://www.nextflow.io/docs/edge/amazons3.html][Docs on S3]]
-+ You just call =file()= and nextflow figures out under the hood the
-  protocol whether it should pull it from S3, http, FTP, or a local
-  file. This is compared to the Snakemake remote files and is how I
-  think DataSets.jl should expose files to users.
++ You just call =file()= and nextflow figures out under the hood the protocol
+  whether it should pull it from S3, http, FTP, or a local file.
 + No data file specification
