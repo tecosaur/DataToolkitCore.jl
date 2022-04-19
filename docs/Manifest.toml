@@ -125,11 +125,9 @@ uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 
 [[deps.Org]]
 deps = ["Dates", "Markdown"]
-git-tree-sha1 = "97b3d4e6d9d7ec9d6027344849a9cfef6c54f505"
-repo-rev = "main"
-repo-url = "https://github.com/tecosaur/Org.jl.git"
+git-tree-sha1 = "c7d3f27b2e077c46666709289329c94b3b3ec60a"
 uuid = "587fedb0-ad84-11e9-2bd6-d15ea4be1f9e"
-version = "0.2.0"
+version = "0.3.0"
 
 [[deps.Parsers]]
 deps = ["Dates"]
