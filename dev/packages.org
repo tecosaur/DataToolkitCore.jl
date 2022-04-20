@@ -1,0 +1,20 @@
+#+title: Using Packages
+
+It is entirely likely that in the course of writing a package providing a custom
+data transformer, one would come across packages that /may/ be needed.
+
+Every possibly desired package could be shoved into the list of dependences, but
+this is a somewhat crude approach. A more granular approach is enabled with two
+macros, ~@addpkg~ and ~@use~.
+
+* Letting DataToolkitBase know about extra packages
+
+#+begin_src @docs
+@addpkg
+#+end_src
+
+* Using extra packages
+
+#+begin_src @docs
+@use
+#+end_src
