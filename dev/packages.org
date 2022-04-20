@@ -18,3 +18,33 @@ macros, ~@addpkg~ and ~@use~.
 #+begin_src @docs
 @use
 #+end_src
+
+* Example
+
+#+begin_src julia
+module DataToolkitExample
+
+using DataToolkitBase
+using DataFrame
+
+function __init__()
+    @addpkg CSV "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+    @addpkg DelimitedFiles "8bb1440f-4735-579b-a4ab-409b98df4dab"
+end
+
+function load(::DataLoader{:csv}, from::IOStream, ::Type{DataFrame})
+    @use CSV
+    result = CSV.read(from, DataFrame)
+    close(from)
+    result
+end
+
+function load(::DataLoader{:delimcsv}, from::IOStream, ::Type{DataFrame})
+    @use DelimitedFiles
+    result = DelimitedFiles.readdlm(from, ',', DataFrame)
+    close(from)
+    result
+end
+
+end
+#+end_src
