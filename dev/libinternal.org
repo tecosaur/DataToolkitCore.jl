@@ -28,9 +28,13 @@ PLUGINS
 #+end_src
 
 #+begin_src @docs
-EXTRA_PACKAGES
+@__MODULE__.EXTRA_PACKAGES
 #+end_src
 
 #+begin_src @docs
+DATA_CONFIG_RESERVED_ATTRIBUTES
+#+end_src
+
+#+begin_src @eval
 DATA_CONFIG_RESERVED_ATTRIBUTES
 #+end_src
