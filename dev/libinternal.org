@@ -1,5 +1,11 @@
 #+title: Private API
 
+* Abstract Data Transformer
+
+#+begin_src @docs
+AbstractDataTransformer
+#+end_src
+
 * Advice Amalgamation
 
 #+begin_src @docs
@@ -11,7 +17,6 @@ DataAdviceAmalgamation
 #+begin_src @docs
 QualifiedType
 #+end_src
-
 * Global variables
 
 #+begin_src @docs
