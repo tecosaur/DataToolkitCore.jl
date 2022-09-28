@@ -12,7 +12,7 @@ name="data collection name"
 uuid="a UUIDv4"
 plugins=["plugin1", "plugin2", ...]
 
-[data]
+[config]
 # [Properties of the data collection itself]
 
 [[mydataset]]
