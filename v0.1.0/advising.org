@@ -1,0 +1,56 @@
+#+title: Data Advising
+
+* Advice
+
+#+begin_src @docs
+DataAdvice
+#+end_src
+
+* Advisement points
+
+** Parsing and serialisation of data sets and collections
+
+~DataCollection~​s, ~DataSet~​s, and ~AbstractDataTransformer~​s are advised at two
+stages during parsing:
+1. When calling ~fromspec~ on the ~Dict~ representation, at the start of parsing
+2. At the end of the ~fromspec~ function, calling ~identity~ on the object
+
+Serialisation is performed through the ~tospec~ call, which is also advised.
+
+The signatures of the advised function calls are as follows:
+
+#+begin_src julia
+fromspec(DataCollection, spec::Dict{String, Any}; path::Union{String, Nothing})::DataCollection
+identity(collection::DataCollection)::DataCollection
+tospec(collection::DataCollection)::Dict
+#+end_src
+
+#+begin_src julia
+fromspec(DataSet, collection::DataCollection, name::String, spec::Dict{String, Any})::DataSet
+identity(dataset::DataSet)::DataSet
+tospec(dataset::DataSet)::Dict
+#+end_src
+
+#+begin_src julia
+fromspec(ADT::Type{<:AbstractDataTransformer}, dataset::DataSet, spec::Dict{String, Any})::ADT
+identity(adt::AbstractDataTransformer)::AbstractDataTransformer
+tospec(adt::AbstractDataTransformer)::Dict
+#+end_src
+
+** Processing identifiers
+
+Both the parsing of an ~Identifier~ from a string, and the serialisation of an ~Identifier~ to a string are advised. Specifically, the following function calls:
+#+begin_src julia
+parse(Identifier, spec::AbstractString, advised=true)
+string(ident::Identifier)
+#+end_src
+
+** The data flow arrows
+
+The reading, writing, and storage of data may all be advised. Specifically,
+the following function calls:
+#+begin_src julia
+load(loader::DataLoader, datahandle, as::Type)
+storage(provider::DataStorage, as::Type; write::Bool)
+save(writer::DataWriter, datahandle, info)
+#+end_src
