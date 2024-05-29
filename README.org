@@ -7,3 +7,7 @@
 #+html: <a href="https://coveralls.io/github/tecosaur/DataToolkitCore.jl"><img src="https://coveralls.io/repos/github/tecosaur/DataToolkitCore.jl/badge.svg"></a>
 
 Prototype foundation for a data management framework.
+
+-----
+
+*! This package is now developed in [[https://github.com/tecosaur/DataToolkit.jl][the monorepo]].*
